@@ -1,0 +1,68 @@
+// colors
+$primary-orange:hsl(26, 100%, 55%);
+$pale-orange:hsl(25, 100%, 94%);
+$blackOpacity: hsla(0, 0%, 0%, 0.5);
+$gray: hsla(0, 0%, 0%, 0.205);
+$whitepure: hsl(223, 64%, 98%);
+$radius:10px;
+// for devices 
+$phone:768px;
+$ipad:992px;
+// flex
+@mixin flexes($justify, $align, $dir) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    @if $dir==column {
+        flex-direction: column;
+    }
+}
+
+//translate to make anything in center position
+%translateCenter {
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+// for images 
+@mixin coverImg($url) {
+    background-image: url($url);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+// position 
+@mixin position($position, $top, $right, $bottom, $left) {
+    position: $position;
+    top: $top;
+    left: $left;
+    bottom: $bottom;
+    right: $right;
+}
+
+@mixin widthHeight($height, $width) {
+    height: $height;
+    width: $width;
+}
+
+// font weight
+@function weight($every) {
+    @if ($every==small) {
+        @return 200
+    }
+    ;
+    @if ($every==regular) {
+        @return 500
+    }
+    ;
+    @if($every==regular_) {
+        @return 600
+    }
+    ;
+    @if ($every==bold) {
+        @return 900
+    }
+}

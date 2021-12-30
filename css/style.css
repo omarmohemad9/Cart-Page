@@ -96,6 +96,7 @@
 }
 
 .navbar .container ul {
+  padding: 35px 0px;
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -119,7 +120,8 @@
 }
 
 .navbar .container ul li {
-  padding: 35px 0px;
+  padding-bottom: 5px;
+  position: relative;
   font-weight: 600;
   color: rgba(0, 0, 0, 0.5);
   transition: all 0.2s ease;
@@ -131,7 +133,6 @@
 }
 
 .navbar .container ul li:hover, .navbar .container ul li.active {
-  transform: scale(1.1);
   color: #ff7d1a;
   border-bottom: 3px solid rgba(0, 0, 0, 0.5);
 }
@@ -187,7 +188,7 @@
   bottom: none;
   right: none;
   background-color: white;
-  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.205);
+  box-shadow: 0px 0px 10px rgba(38, 38, 38, 0.08);
   border-radius: 10px;
 }
 
@@ -204,6 +205,8 @@
   padding: 3.2rem 3rem 0rem;
   text-align: center;
   font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: capitalize;
 }
 
 .navbar .container .img-cart .svg_icon .cart-section .chang.none {

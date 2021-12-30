@@ -39,12 +39,12 @@ function togCls(e) {
     });
     imagesSection[count - 1].classList.add("active");
     window.localStorage.setItem("numset", e.currentTarget.dataset.num);
-    img.setAttribute("src", `/images/image-product-${count}.jpg`);
+    img.setAttribute("src", `images/image-product-${count}.jpg`);
 }
 if (localStorage.getItem("numset") == undefined) {
     localStorage.getItem("numset") = 0;
 }
-let imagesArr = ["/images/image-product-1-thumbnail.jpg", "/images/image-product-2-thumbnail.jpg", "/images/image-product-3-thumbnail.jpg", "/images/image-product-4-thumbnail.jpg"]
+let imagesArr = ["images/image-product-1-thumbnail.jpg", "images/image-product-2-thumbnail.jpg", "images/image-product-3-thumbnail.jpg", "images/image-product-4-thumbnail.jpg"]
     // get num from localstorage to add class
 function getNum() {
     let valueFromLocal = localStorage.getItem("numset");
@@ -62,7 +62,7 @@ let imgBehindAppear = document.getElementById("imgBe")
 
 let imagesBe = document.querySelectorAll(".sliderShows div ")
 let count_2 = 1;
-let imagesArr_2 = ["/images/image-product-1-thumbnail.jpg", "/images/image-product-2-thumbnail.jpg", "/images/image-product-3-thumbnail.jpg", "/images/image-product-4-thumbnail.jpg"]
+let imagesArr_2 = ["images/image-product-1-thumbnail.jpg", "images/image-product-2-thumbnail.jpg", "images/image-product-3-thumbnail.jpg", "images/image-product-4-thumbnail.jpg"]
 let prevBtn = document.querySelector(".prev")
 let nextBtn = document.querySelector(".next")
 
@@ -142,7 +142,7 @@ orderBtn.onclick = function() {
     let content = `
                             <div class="box-collection">
                                 <div class="img-carts">
-                                    <img src="/images/image-product-1-thumbnail.jpg" alt="" />
+                                    <img src="images/image-product-1-thumbnail.jpg" alt="" />
                                     <div class="text-cart">
                                         <p>Fall Limited Edition Sneakers</p>
                                         <p>$125.00 x <span class="countOrder">${countInput.value}</span>
@@ -208,3 +208,15 @@ humborg.onclick = function() {
 closePhone.onclick = function() {
     onphoneSe.classList.remove("active")
 }
+
+// lis toggle class
+let lisNavArr = Array.from(document.querySelectorAll(".navbar .container ul li"))
+
+lisNavArr.forEach(e => {
+    e.addEventListener("click", (e) => {
+        lisNavArr.forEach(el => {
+            el.classList.remove("active")
+        });
+        e.currentTarget.classList.add("active")
+    })
+})

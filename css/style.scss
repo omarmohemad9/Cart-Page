@@ -129,7 +129,7 @@
                     .chang {
                         padding: 3.2rem 3rem 0rem;
                         text-align: center;
-                        font-weight: weight(bold);
+                        font-weight: 600;
                         letter-spacing: 1px;
                         text-transform: capitalize;
                         &.none {
@@ -145,6 +145,17 @@
                         max-height: 500px;
                         overflow-y: auto;
                         // content
+                        &::-webkit-scrollbar{
+                            width: 3px
+                        }
+                        &::-webkit-scrollbar-button{
+                            // display: none
+                            // background-color: $primary-orange;
+                        }
+                        &::-webkit-scrollbar-thumb{
+                            background-color: $primary-orange;
+
+                        }
                         .img-carts {
                             @include flexes(space-between, center, row);
                             margin-top: 15px;
@@ -420,7 +431,8 @@
                     padding: 11px 50px;
                     border: 0;
                     color: white;
-                    font-weight: weight(bold);
+                    font-weight: 700;
+                    text-transform: capitalize;
                     border-radius: $radius;
                     @media (max-width: $phone) {
                         justify-content: center;
